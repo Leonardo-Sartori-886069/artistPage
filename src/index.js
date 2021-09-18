@@ -93,20 +93,21 @@ function figures() {
 }
 
 if (type !== undefined) {
+  document.querySelector("#spotMessage").style.visibility = "hidden";
+  document.getElementById("helpBtn").remove();
+  document.getElementById("dataShow").style.visibility = "visible";
   figures();
   getData();
+  createH();
+  document.title = url.searchParams.get(type);
 }
 
 function getData() {
-  document.getElementById("helpBtn").remove();
-  document.getElementById("dataShow").style.visibility = "visible";
-  console.log("Data searched!");
   getDeezer();
   getSpotify();
   getItunes();
   getYoutube();
-  createH();
-  document.title = url.searchParams.get(type);
+  console.log("Data searched!");
 }
 
 document.getElementById("openNav").addEventListener("click", function () {
