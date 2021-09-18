@@ -265,3 +265,13 @@ code {
   font-size: 10px;
   color: #cecece;
 }
+
+#spotMessage {
+  animation: blinker 4s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
