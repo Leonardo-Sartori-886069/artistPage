@@ -19,13 +19,6 @@ var album = url.searchParams.get("album");
 var artist = url.searchParams.get("artist");
 console.log(url_string, track, album, artist);
 
-document.getElementById("helpBtn").addEventListener("click", function () {
-  console.log("Help!");
-  document.getElementById("guideBtn").click();
-});
-
-document.getElementById("helpBtn").style.visibility = "visible";
-
 /*var track = url.searchParams.get("track") || "Notturno";
 var album = url.searchParams.get("album");
 var artist = url.searchParams.get("artist") || "Leonardo Sartori";*/
@@ -100,6 +93,13 @@ if (type !== undefined) {
   getData();
   createH();
   document.title = url.searchParams.get(type);
+} else {
+  document.getElementById("helpBtn").addEventListener("click", function () {
+    console.log("Help!");
+    document.getElementById("guideBtn").click();
+  });
+
+  document.getElementById("helpBtn").style.visibility = "visible";
 }
 
 function getData() {
