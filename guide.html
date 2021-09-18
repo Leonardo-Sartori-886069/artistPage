@@ -30,7 +30,10 @@
             <h2 id="h1">Linee guida</h2>
           </h1>
           <span id="guideline"></span>
-          <div id="inputs">
+          <div id="inputs" class="notraslate">
+            <span
+              ><br /><b>Crea il tuo Smart Url personalizzato:</b><br
+            /></span>
             <label for="track">track</label>
             <input type="text" id="trackIn" name="track" /><br />
             <label for="artist">artist</label>
@@ -70,7 +73,7 @@
       function createGuideline() {
         var url = window.location.href.split("guide.html")[0];
         var stringa =
-          "Aggiungere a <code>" + url + "</code> i parametri opzionali: <br>";
+          "Aggiungere a <code>" + url + " </code> i parametri opzionali: <br>";
         stringa += "<code>track, album, artist</code><br>";
         stringa += "<ul>";
         var types = ["artist", "track", "album"];
