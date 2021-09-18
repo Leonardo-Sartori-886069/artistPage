@@ -37,18 +37,20 @@
           </div>
         </div>
         <div id="google_translate_element" class="translateBtn"></div>
-        <script
-          type="text/javascript"
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        ></script>
         <script type="text/javascript">
-          /*googleTranslateElementInit();
+          window.onload = function () {
+            var script = document.createElement("script");
+            script.src =
+              "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            document.head.appendChild(script);
+          };
+          googleTranslateElementInit();
           function googleTranslateElementInit() {
             new google.translate.TranslateElement(
               { pageLanguage: "it" },
               "google_translate_element"
             );
-          }*/
+          }
         </script>
       </div>
     </div>
