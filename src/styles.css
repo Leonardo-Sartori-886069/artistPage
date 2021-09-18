@@ -260,3 +260,8 @@ code {
   right: 2px;
   position: absolute;
 }
+
+.develop {
+  font-size: 10px;
+  color: #cecece;
+}
