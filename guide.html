@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leonardo Sartori</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link id="favicon" rel="icon" type="image/png" sizes="16x16" />
+  </head>
+  <body>
+    <div id="main">
+      <span style="font-size: 30px; cursor: pointer;" id="back"
+        >&#60;<a href="/index.html" id="backBtn"></a
+      ></span>
+      <div>
+        <div class="center" style="width: 70%;">
+          <h1>
+            <h2 id="h1">Linee guida</h2>
+          </h1>
+          <span id="guideline"></span>
+          <div id="inputs">
+            <label for="track">track</label>
+            <input type="text" id="trackIn" name="track" /><br />
+            <label for="artist">artist</label>
+            <input type="text" id="artistIn" name="artist" /><br />
+            <label for="album">album</label>
+            <input type="text" id="albumIn" name="album" /><br />
+            <button class="types" id="submit">Submit</button><br />
+            <span id="urlResult"></span>
+          </div>
+        </div>
+        <div id="google_translate_element" class="translateBtn"></div>
+        <script
+          type="text/javascript"
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+        ></script>
+        <script type="text/javascript">
+          /*googleTranslateElementInit();
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+              { pageLanguage: "it" },
+              "google_translate_element"
+            );
+          }*/
+        </script>
+      </div>
+    </div>
+    <script>
+      document.getElementById("guideline").innerHTML = createGuideline();
+      document.getElementById("back").addEventListener("click", function () {
+        document.getElementById("backBtn").click();
+      });
+      document.getElementById("submit").addEventListener("click", function () {
+        createUrl();
+      });
+
+      function createUrl() {
+        var url = window.location.href.split("guide.html")[0] + "?";
+        var type = ["track", "artist", "album"];
+        for (const x of type) {
+          var xValue = document.getElementById(x + "In").value;
+          console.log(xValue);
+          if (xValue !== "") {
+            url += x + "=" + xValue + "&";
+          }
+        }
+        const editedText = url.slice(0, -1);
+        document.getElementById("urlResult").innerHTML = editedText;
+      }
+
+      function createGuideline() {
+        var url = window.location.href.split("guide.html")[0];
+        var stringa =
+          "Aggiungere a <code>" + url + "</code> i parametri opzionali: <br>";
+        stringa += "<code>track, album, artist</code><br>";
+        stringa += "<ul>";
+        var types = ["artist", "track", "album"];
+        for (const x of types) {
+          stringa += "<li><b><i>" + x + ":</i></b> ";
+          stringa +=
+            "Ex.: <code>" +
+            url +
+            "?" +
+            x +
+            "=<i>[" +
+            x +
+            "Name]</i></code></li>";
+        }
+        stringa +=
+          "<br>Si possono concatenare i parametri via <code>&</code>: <br>";
+        stringa +=
+          "Ex.: <code>" +
+          url +
+          "?track=<i>[trackName]&artist=<i>[artistName]</i>";
+        return stringa;
+      }
+    </script>
+  </body>
+</html>
