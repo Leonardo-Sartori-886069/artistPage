@@ -37,21 +37,6 @@
           </div>
         </div>
         <div id="google_translate_element" class="translateBtn"></div>
-        <script type="text/javascript">
-          window.onload = function () {
-            var script = document.createElement("script");
-            script.src =
-              "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-            document.head.appendChild(script);
-          };
-          googleTranslateElementInit();
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-              { pageLanguage: "it" },
-              "google_translate_element"
-            );
-          }
-        </script>
       </div>
     </div>
     <script>
@@ -62,6 +47,13 @@
       document.getElementById("submit").addEventListener("click", function () {
         createUrl();
       });
+      window.onload = function () {
+        var script = document.createElement("script");
+        script.src =
+          "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        document.head.appendChild(script);
+        googleTranslateElementInit();
+      };
 
       function createUrl() {
         var url = window.location.href.split("guide.html")[0] + "?";
@@ -102,6 +94,12 @@
           url +
           "?track=<i>[trackName]</i>&artist=<i>[artistName]</i>";
         return stringa;
+      }
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "it" },
+          "google_translate_element"
+        );
       }
     </script>
   </body>
