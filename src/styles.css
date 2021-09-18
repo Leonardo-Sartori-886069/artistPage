@@ -275,3 +275,11 @@ code {
     opacity: 0;
   }
 }
+
+.logo {
+  position: absolute;
+  margin: 10px 10px;
+  top: 0;
+  right: 0;
+  width: 64px;
+}
