@@ -8,6 +8,7 @@ window.onload = function () {
     "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
   document.head.appendChild(script);
   googleTranslateElementInit();
+  document.querySelector("#loading").style.visibility = "hidden";
 };
 
 var Spotify = require("node-spotify-api");
