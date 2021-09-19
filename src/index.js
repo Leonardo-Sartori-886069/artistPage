@@ -9,6 +9,7 @@ window.onload = function () {
   document.head.appendChild(script);
   googleTranslateElementInit();
   document.querySelector("#loading").style.visibility = "hidden";
+  $("#body").fadeIn(500);
 };
 
 var Spotify = require("node-spotify-api");

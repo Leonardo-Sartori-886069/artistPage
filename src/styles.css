@@ -297,10 +297,29 @@ code {
   text-align: center;
   background-color: var(--bg_left);
   z-index: 99;
+  visibility: visible;
 }
 
 #loading-image {
   position: absolute;
   top: calc(40%);
   left: calc(44%);
+}
+
+body {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#body {
+  display: none;
 }
